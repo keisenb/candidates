@@ -14,3 +14,20 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->group(['prefix' => 'api/v1'], function () use ($router) {
+
+    // parties
+    $router->get('parties',  ['uses' => 'PartyController@GetParties']);
+    $router->get('parties/{id}', ['uses' => 'PartyController@GetParty']);
+
+  });
+
+
+  $router->group(['prefix' => 'api/v1', 'middleware' => 'auth'], function () use ($router) {
+
+    // parties
+    $router->post('parties', ['uses' => 'PartyController@create']);
+    $router->delete('parties/{id}', ['uses' => 'PartyController@delete']);
+    $router->put('parties/{id}', ['uses' => 'PartyController@update']);
+  });
