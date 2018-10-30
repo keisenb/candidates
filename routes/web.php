@@ -77,6 +77,10 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
   // authenticated routes for admin usage
 $router->group(['prefix' => 'api/v1', 'middleware' => 'auth'], function () use ($router) {
 
+  // todo: move delete methods to admin specific middleware
+  // todo: make moderator specifc middleware for rest of these calls
+
+
   // districts
   $router->post('districts', ['uses' => 'DistrictController@create']);
   $router->delete('districts/{id}', ['uses' => 'DistrictController@delete']);
@@ -100,7 +104,7 @@ $router->group(['prefix' => 'api/v1', 'middleware' => 'auth'], function () use (
   $router->delete('issues/{id}', ['uses' => 'IssueController@delete']);
   $router->put('issues/{id}', ['uses' => 'IssueController@update']);
 
-  
+
   // candidates
   $router->post('candidates', ['uses' => 'CandidateController@createCandidate']);
   $router->delete('candidates/{id}', ['uses' => 'CandidateController@deleteCandidate']);
