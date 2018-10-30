@@ -81,6 +81,18 @@ $router->group(['prefix' => 'api/v1', 'middleware' => 'auth'], function () use (
   // todo: make moderator specifc middleware for rest of these calls
 
 
+  // counties
+  $router->post('counties', ['uses' => 'CountyController@create']);
+  $router->delete('counties/{id}', ['uses' => 'CountyController@delete']);
+  $router->put('counties/{id}', ['uses' => 'CountyController@update']);
+
+
+  // cities
+  $router->post('cities', ['uses' => 'CityController@create']);
+  $router->delete('cities/{id}', ['uses' => 'CityController@delete']);
+  $router->put('cities/{id}', ['uses' => 'CityController@update']);
+
+
   // districts
   $router->post('districts', ['uses' => 'DistrictController@create']);
   $router->delete('districts/{id}', ['uses' => 'DistrictController@delete']);
@@ -103,6 +115,7 @@ $router->group(['prefix' => 'api/v1', 'middleware' => 'auth'], function () use (
   $router->post('issues', ['uses' => 'IssueController@create']);
   $router->delete('issues/{id}', ['uses' => 'IssueController@delete']);
   $router->put('issues/{id}', ['uses' => 'IssueController@update']);
+  $router->patch('issues/{id}/approve', ['uses' => 'IssueController@approve']);
 
 
   // candidates

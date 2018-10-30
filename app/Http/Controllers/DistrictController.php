@@ -21,7 +21,7 @@ class DistrictController extends Controller
     {
         $states = $request->get('states');
         if($states == true) {
-            return response()->json(District::with('state')->get());
+            return response()->json(District::with('state')->findOrFail($id));
         }
         return response()->json(District::findOrFail($id));
     }
