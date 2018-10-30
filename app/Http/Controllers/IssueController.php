@@ -10,12 +10,12 @@ class IssueController extends Controller
 
     public function GetIssues()
     {
-        return response()->json(Issue::all());
+        return response()->json(Issue::where('approved', true)->get());
     }
 
     public function GetIssue($id)
     {
-        return response()->json(Issue::findOrFail($id));
+        return response()->json(Issue::where('approved', true)->findOrFail($id));
     }
 
     public function create(Request $request)

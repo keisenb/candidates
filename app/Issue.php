@@ -16,6 +16,10 @@ class Issue extends Model
         'name', 'description', 'approved',
     ];
 
+    protected $casts = [
+        'approved' => 'boolean',
+    ];
+    
     /**
      * The attributes excluded from the model's JSON form.
      *

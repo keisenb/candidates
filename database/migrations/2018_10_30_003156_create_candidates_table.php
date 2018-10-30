@@ -21,7 +21,7 @@ class CreateCandidatesTable extends Migration
             $table->string('locale_type');
             $table->unsignedInteger('locale_id');
             $table->dateTime('election_date');	
-
+            $table->boolean('approved')->default(false);
             $table->unsignedInteger('position_id');
             $table->foreign('position_id')->references('id')->on('positions');
 

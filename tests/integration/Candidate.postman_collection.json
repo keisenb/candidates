@@ -374,6 +374,49 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Approve",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik5rTTBPVUkzUVRjMk56azROVUpCUWtFMk5qTkdPRVU1UkVVd09ESXdPRVpDTXpCRlJUUXlNdyJ9.eyJpc3MiOiJodHRwczovL2NhbmRpZGF0ZS5hdXRoMC5jb20vIiwic3ViIjoid2NHMlJ0SklncEs1R1AxdmV6MUhmcVVEV0N6a2xLU3JAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vY2FuZGlkYXRlLm9yZyIsImlhdCI6MTU0MDg1NzU0NywiZXhwIjoxNTQwOTQzOTQ3LCJhenAiOiJ3Y0cyUnRKSWdwSzVHUDF2ZXoxSGZxVURXQ3prbEtTciIsImd0eSI6ImNsaWVudC1jcmVkZW50aWFscyJ9.LUXCrSuZRLLw-eDmAww42TisGDNs5phaHkTFkuSV3Ph8P_hYtq1MAOLyjbC1cH0TIb_z6CPfYunGUymrknnco6o32GznEE6SsU7OYt4S3UOfeCYcrbx6hb6cTOKZkakA5tLvSdKP0DQ0yezS5je2j7nSyLqfbARbPjdRqU0ivPgVPnu5iW7o0348ei-ZHPNukaFRXeoVsr0Mk8XvIVhkCbNI3IBV00S0l-XdFqgTwuvcCRzrVVo78UwQKdM4BHqExj-RSJEzjzuCz6AJ9lYe6nfdYD2hiBo61GshbBWwLEBD23nxgz2XuhduoNmmLBrQhoZ20DHNste0-omch-Sx1w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "candidate:8888/api/v1/positions/1/approve",
+							"host": [
+								"candidate"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"v1",
+								"positions",
+								"1",
+								"approve"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -570,6 +613,49 @@
 								"v1",
 								"positions",
 								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Approve",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik5rTTBPVUkzUVRjMk56azROVUpCUWtFMk5qTkdPRVU1UkVVd09ESXdPRVpDTXpCRlJUUXlNdyJ9.eyJpc3MiOiJodHRwczovL2NhbmRpZGF0ZS5hdXRoMC5jb20vIiwic3ViIjoid2NHMlJ0SklncEs1R1AxdmV6MUhmcVVEV0N6a2xLU3JAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vY2FuZGlkYXRlLm9yZyIsImlhdCI6MTU0MDg1NzU0NywiZXhwIjoxNTQwOTQzOTQ3LCJhenAiOiJ3Y0cyUnRKSWdwSzVHUDF2ZXoxSGZxVURXQ3prbEtTciIsImd0eSI6ImNsaWVudC1jcmVkZW50aWFscyJ9.LUXCrSuZRLLw-eDmAww42TisGDNs5phaHkTFkuSV3Ph8P_hYtq1MAOLyjbC1cH0TIb_z6CPfYunGUymrknnco6o32GznEE6SsU7OYt4S3UOfeCYcrbx6hb6cTOKZkakA5tLvSdKP0DQ0yezS5je2j7nSyLqfbARbPjdRqU0ivPgVPnu5iW7o0348ei-ZHPNukaFRXeoVsr0Mk8XvIVhkCbNI3IBV00S0l-XdFqgTwuvcCRzrVVo78UwQKdM4BHqExj-RSJEzjzuCz6AJ9lYe6nfdYD2hiBo61GshbBWwLEBD23nxgz2XuhduoNmmLBrQhoZ20DHNste0-omch-Sx1w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "candidate:8888/api/v1/districts/1/approve",
+							"host": [
+								"candidate"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"v1",
+								"districts",
+								"1",
+								"approve"
 							]
 						}
 					},
@@ -773,6 +859,49 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Approve",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik5rTTBPVUkzUVRjMk56azROVUpCUWtFMk5qTkdPRVU1UkVVd09ESXdPRVpDTXpCRlJUUXlNdyJ9.eyJpc3MiOiJodHRwczovL2NhbmRpZGF0ZS5hdXRoMC5jb20vIiwic3ViIjoid2NHMlJ0SklncEs1R1AxdmV6MUhmcVVEV0N6a2xLU3JAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vY2FuZGlkYXRlLm9yZyIsImlhdCI6MTU0MDg1NzU0NywiZXhwIjoxNTQwOTQzOTQ3LCJhenAiOiJ3Y0cyUnRKSWdwSzVHUDF2ZXoxSGZxVURXQ3prbEtTciIsImd0eSI6ImNsaWVudC1jcmVkZW50aWFscyJ9.LUXCrSuZRLLw-eDmAww42TisGDNs5phaHkTFkuSV3Ph8P_hYtq1MAOLyjbC1cH0TIb_z6CPfYunGUymrknnco6o32GznEE6SsU7OYt4S3UOfeCYcrbx6hb6cTOKZkakA5tLvSdKP0DQ0yezS5je2j7nSyLqfbARbPjdRqU0ivPgVPnu5iW7o0348ei-ZHPNukaFRXeoVsr0Mk8XvIVhkCbNI3IBV00S0l-XdFqgTwuvcCRzrVVo78UwQKdM4BHqExj-RSJEzjzuCz6AJ9lYe6nfdYD2hiBo61GshbBWwLEBD23nxgz2XuhduoNmmLBrQhoZ20DHNste0-omch-Sx1w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "candidate:8888/api/v1/counties/1/approve",
+							"host": [
+								"candidate"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"v1",
+								"counties",
+								"1",
+								"approve"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -968,6 +1097,49 @@
 								"v1",
 								"cities",
 								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Approve",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik5rTTBPVUkzUVRjMk56azROVUpCUWtFMk5qTkdPRVU1UkVVd09ESXdPRVpDTXpCRlJUUXlNdyJ9.eyJpc3MiOiJodHRwczovL2NhbmRpZGF0ZS5hdXRoMC5jb20vIiwic3ViIjoid2NHMlJ0SklncEs1R1AxdmV6MUhmcVVEV0N6a2xLU3JAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vY2FuZGlkYXRlLm9yZyIsImlhdCI6MTU0MDg1NzU0NywiZXhwIjoxNTQwOTQzOTQ3LCJhenAiOiJ3Y0cyUnRKSWdwSzVHUDF2ZXoxSGZxVURXQ3prbEtTciIsImd0eSI6ImNsaWVudC1jcmVkZW50aWFscyJ9.LUXCrSuZRLLw-eDmAww42TisGDNs5phaHkTFkuSV3Ph8P_hYtq1MAOLyjbC1cH0TIb_z6CPfYunGUymrknnco6o32GznEE6SsU7OYt4S3UOfeCYcrbx6hb6cTOKZkakA5tLvSdKP0DQ0yezS5je2j7nSyLqfbARbPjdRqU0ivPgVPnu5iW7o0348ei-ZHPNukaFRXeoVsr0Mk8XvIVhkCbNI3IBV00S0l-XdFqgTwuvcCRzrVVo78UwQKdM4BHqExj-RSJEzjzuCz6AJ9lYe6nfdYD2hiBo61GshbBWwLEBD23nxgz2XuhduoNmmLBrQhoZ20DHNste0-omch-Sx1w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "candidate:8888/api/v1/cities/1/approve",
+							"host": [
+								"candidate"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"v1",
+								"cities",
+								"1",
+								"approve"
 							]
 						}
 					},

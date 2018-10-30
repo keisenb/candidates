@@ -16,6 +16,10 @@ class CandidateIssues extends Model
         'stance', 'description', 'approved',
     ];
 
+    protected $casts = [
+        'approved' => 'boolean',
+    ];
+    
     /**
      * The attributes excluded from the model's JSON form.
      *

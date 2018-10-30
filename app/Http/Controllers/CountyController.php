@@ -12,18 +12,18 @@ class CountyController extends Controller
     {
         $states = $request->get('states');
         if($states == true) {
-            return response()->json(County::with('state')->get());
+            return response()->json(County::where('approved', true)->with('state')->get());
         }
-        return response()->json(County::all());
+        return response()->json(County::where('approved', true)->get());
     }
 
     public function GetCounty($id, Request $request)
     {
         $states = $request->get('states');
         if($states == true) {
-            return response()->json(County::with('state')->findOrFail($id));
+            return response()->json(County::where('approved', true)->with('state')->findOrFail($id));
         }
-        return response()->json(County::findOrFail($id));
+        return response()->json(County::where('approved', true)->findOrFail($id));
     }
 
     public function create(Request $request)
@@ -36,6 +36,7 @@ class CountyController extends Controller
         $county = new County;
 
         $county->name = $request->name;
+        $county->approved = false;
         $county->state()->associate($request->state_id);
         $county->save();
 
@@ -64,5 +65,13 @@ class CountyController extends Controller
         return response()->json([
             'message' => 'Record deleted.',
         ], 204);
+    }
+
+    public function approve($id)
+    {
+        $county = County::where('approved', false)->findOrFail($id);
+        $county->approved = true;
+        $county->save();
+        return response()->json($county, 200);
     }
 }

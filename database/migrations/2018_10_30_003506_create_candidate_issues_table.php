@@ -17,7 +17,7 @@ class CreateCandidateIssuesTable extends Migration
             $table->increments('id');
             $table->boolean('stance');
             $table->string('description');
-            $table->boolean('approved');
+            $table->boolean('approved')->default(false);
 
             $table->unsignedInteger('candidate_id');
             $table->foreign('candidate_id')->references('id')->on('candidates');

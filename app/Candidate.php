@@ -13,7 +13,11 @@ class Candidate extends Model
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name', 'website', 'locale_type', 'election_date'
+        'first_name', 'last_name', 'website', 'locale_type', 'election_date', 'approved'
+    ];
+
+    protected $casts = [
+        'approved' => 'boolean',
     ];
 
     /**

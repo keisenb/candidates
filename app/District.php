@@ -13,9 +13,13 @@ class District extends Model
      * @var array
      */
     protected $fillable = [
-        'district',
+        'district', 'approved',
     ];
 
+    protected $casts = [
+        'approved' => 'boolean',
+    ];
+    
     /**
      * The attributes excluded from the model's JSON form.
      *

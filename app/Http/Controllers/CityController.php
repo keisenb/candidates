@@ -12,18 +12,18 @@ class CityController extends Controller
     {
         $states = $request->get('states');
         if($states == true) {
-            return response()->json(City::with('state')->get());
+            return response()->json(City::where('approved', true)->with('state')->get());
         }
-        return response()->json(City::all());
+        return response()->json(City::where('approved', true)->get());
     }
 
     public function GetCity($id, Request $request)
     {
         $states = $request->get('states');
         if($states == true) {
-            return response()->json(City::with('state')->findOrFail($id));
+            return response()->json(City::where('approved', true)->with('state')->findOrFail($id));
         }
-        return response()->json(City::findOrFail($id));
+        return response()->json(City::where('approved', true)->findOrFail($id));
     }
 
     public function create(Request $request)
@@ -37,6 +37,7 @@ class CityController extends Controller
 
         $city->name = $request->name;
         $city->state()->associate($request->state_id);
+        $city->approved = false;
         $city->save();
 
         return response()->json($city, 201);
@@ -64,5 +65,13 @@ class CityController extends Controller
         return response()->json([
             'message' => 'Record deleted.',
         ], 204);
+    }
+
+    public function approve($id)
+    {
+        $city = City::where('approved', false)->findOrFail($id);
+        $city->approved = true;
+        $city->save();
+        return response()->json($city, 200);
     }
 }

@@ -12,18 +12,18 @@ class DistrictController extends Controller
     {
         $states = $request->get('states');
         if($states == true) {
-            return response()->json(District::with('state')->get());
+            return response()->json(District::where('approved', true)->with('state')->get());
         }
-        return response()->json(District::all());
+        return response()->json(District::where('approved', true)->get());
     }
 
     public function GetDistrict($id, Request $request)
     {
         $states = $request->get('states');
         if($states == true) {
-            return response()->json(District::with('state')->findOrFail($id));
+            return response()->json(District::where('approved', true)->with('state')->findOrFail($id));
         }
-        return response()->json(District::findOrFail($id));
+        return response()->json(District::where('approved', true)->findOrFail($id));
     }
 
     public function create(Request $request)
@@ -36,6 +36,7 @@ class DistrictController extends Controller
         $district = new District;
 
         $district->district = $request->district;
+        $district->approved = false;
         $district->state()->associate($request->state_id);
         $district->save();
 
@@ -64,5 +65,13 @@ class DistrictController extends Controller
         return response()->json([
             'message' => 'Record deleted.',
         ], 204);
+    }
+
+    public function approve($id)
+    {
+        $district = District::where('approved', false)->findOrFail($id);
+        $district->approved = true;
+        $district->save();
+        return response()->json($district, 200);
     }
 }

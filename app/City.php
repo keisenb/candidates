@@ -13,7 +13,11 @@ class City extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
+        'name', 'approved',
+    ];
+
+    protected $casts = [
+        'approved' => 'boolean',
     ];
 
     /**

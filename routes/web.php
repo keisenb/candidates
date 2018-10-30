@@ -85,24 +85,28 @@ $router->group(['prefix' => 'api/v1', 'middleware' => 'auth'], function () use (
   $router->post('counties', ['uses' => 'CountyController@create']);
   $router->delete('counties/{id}', ['uses' => 'CountyController@delete']);
   $router->put('counties/{id}', ['uses' => 'CountyController@update']);
+  $router->patch('counties/{id}/approve', ['uses' => 'CountyController@approve']);
 
 
   // cities
   $router->post('cities', ['uses' => 'CityController@create']);
   $router->delete('cities/{id}', ['uses' => 'CityController@delete']);
   $router->put('cities/{id}', ['uses' => 'CityController@update']);
+  $router->patch('cities/{id}/approve', ['uses' => 'CityController@approve']);
 
 
   // districts
   $router->post('districts', ['uses' => 'DistrictController@create']);
   $router->delete('districts/{id}', ['uses' => 'DistrictController@delete']);
   $router->put('districts/{id}', ['uses' => 'DistrictController@update']);
+  $router->patch('districts/{id}/approve', ['uses' => 'DistrictController@approve']);
 
 
   // positions
   $router->post('positions', ['uses' => 'PositionController@create']);
   $router->delete('positions/{id}', ['uses' => 'PositionController@delete']);
   $router->put('positions/{id}', ['uses' => 'PositionController@update']);
+  $router->patch('positions/{id}/approve', ['uses' => 'PositionController@approve']);
 
 
   // parties

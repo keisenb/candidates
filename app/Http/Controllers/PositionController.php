@@ -10,12 +10,12 @@ class PositionController extends Controller
 
     public function GetPositions()
     {
-        return response()->json(Position::all());
+        return response()->json(Position::where('approved', true)->get());
     }
 
     public function GetPosition($id)
     {
-        return response()->json(Position::findOrFail($id));
+        return response()->json(Position::where('approved', true)->findOrFail($id));
     }
 
     public function create(Request $request)
@@ -25,7 +25,11 @@ class PositionController extends Controller
             'description' => 'required'
         ]);
 
-        $position = Position::create($request->all());
+        $position = new Position;
+        $position->name = $request->name;
+        $position->description = $request->description;
+        $position->approved = false;
+        $position->save();
 
         return response()->json($position, 201);
     }
@@ -50,5 +54,13 @@ class PositionController extends Controller
         return response()->json([
             'message' => 'Record deleted.',
         ], 204);
+    }
+
+    public function approve($id)
+    {
+        $position = Position::where('approved', false)->findOrFail($id);
+        $position->approved = true;
+        $position->save();
+        return response()->json($position, 200);
     }
 }
