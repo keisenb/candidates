@@ -74,10 +74,10 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
 });
 
 
-  // authenticated routes for admin usage
+// authenticated routes for admin usage
 $router->group(['prefix' => 'api/v1', 'middleware' => 'auth'], function () use ($router) {
 
-  // todo: move delete methods to admin specific middleware
+  // todo: move delete and approve endpoints to admin specific middleware
   // todo: make moderator specifc middleware for rest of these calls
 
 
