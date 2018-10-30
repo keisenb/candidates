@@ -33,6 +33,12 @@ class PartyController extends Controller
     public function update($id, Request $request)
     {
         $party = Party::findOrFail($id);
+
+        $this->validate($request, [
+            'name' => 'required',
+            'description' => 'required'
+        ]);
+        
         $party->update($request->all());
 
         return response()->json($party, 200);
