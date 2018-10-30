@@ -15,7 +15,7 @@ class CreateDistrictsTable extends Migration
     {
         Schema::create('districts', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('number');
+            $table->integer('district');
 
             $table->unsignedInteger('state_id');
             $table->foreign('state_id')->references('id')->on('states');

@@ -13,7 +13,7 @@ class District extends Model
      * @var array
      */
     protected $fillable = [
-        'number',
+        'district',
     ];
 
     /**
