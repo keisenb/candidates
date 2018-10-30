@@ -82,6 +82,7 @@ $router->group(['prefix' => 'api/v1', 'middleware' => 'auth'], function () use (
   $router->delete('districts/{id}', ['uses' => 'DistrictController@delete']);
   $router->put('districts/{id}', ['uses' => 'DistrictController@update']);
 
+
   // positions
   $router->post('positions', ['uses' => 'PositionController@create']);
   $router->delete('positions/{id}', ['uses' => 'PositionController@delete']);
@@ -93,11 +94,13 @@ $router->group(['prefix' => 'api/v1', 'middleware' => 'auth'], function () use (
   $router->delete('parties/{id}', ['uses' => 'PartyController@delete']);
   $router->put('parties/{id}', ['uses' => 'PartyController@update']);
 
+
   // issues
   $router->post('issues', ['uses' => 'IssueController@create']);
   $router->delete('issues/{id}', ['uses' => 'IssueController@delete']);
   $router->put('issues/{id}', ['uses' => 'IssueController@update']);
 
+  
   // candidates
   $router->post('candidates', ['uses' => 'CandidateController@createCandidate']);
   $router->delete('candidates/{id}', ['uses' => 'CandidateController@deleteCandidate']);

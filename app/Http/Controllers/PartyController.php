@@ -15,7 +15,7 @@ class PartyController extends Controller
 
     public function GetParty($id)
     {
-        return response()->json(Party::find($id));
+        return response()->json(Party::findOrFail($id));
     }
 
     public function create(Request $request)
@@ -47,6 +47,8 @@ class PartyController extends Controller
     public function delete($id)
     {
         Party::findOrFail($id)->delete();
-        return response('Deleted Successfully', 200);
+        return response()->json([
+            'message' => 'Record deleted.',
+        ], 204);
     }
 }
