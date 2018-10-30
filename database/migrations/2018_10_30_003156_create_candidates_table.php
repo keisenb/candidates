@@ -27,6 +27,9 @@ class CreateCandidatesTable extends Migration
             $table->unsignedInteger('party_id');
             $table->foreign('party_id')->references('id')->on('parties');
 
+            $table->unsignedInteger('state_id');
+            $table->foreign('state_id')->references('id')->on('states');
+
             $table->timestamps();
         });
     }

@@ -38,4 +38,9 @@ class Candidate extends Model
     {
         return $this->belongsTo('App\Party');
     }
+
+    public function state()
+    {
+        return $this->belongsTo('App\State');
+    }
 }
