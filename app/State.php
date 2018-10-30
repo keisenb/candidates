@@ -23,5 +23,9 @@ class State extends Model
      */
     protected $hidden = [];
 
+    public function locales()
+    {
+        return $this->morphMany('App\Candidate', 'locale');
+    }
 
 }

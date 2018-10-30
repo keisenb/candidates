@@ -20,15 +20,13 @@ class CreateCandidatesTable extends Migration
             $table->string('website');
             $table->string('locale_type');
             $table->unsignedInteger('locale_id');
+            $table->dateTime('election_date');	
 
             $table->unsignedInteger('position_id');
             $table->foreign('position_id')->references('id')->on('positions');
 
             $table->unsignedInteger('party_id');
             $table->foreign('party_id')->references('id')->on('parties');
-
-            $table->unsignedInteger('state_id');
-            $table->foreign('state_id')->references('id')->on('states');
 
             $table->timestamps();
         });

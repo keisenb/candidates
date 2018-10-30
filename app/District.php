@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Candidate extends Model
+class District extends Model
 {
 
     /**
@@ -13,7 +13,7 @@ class Candidate extends Model
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name', 'website', 'locale_type', 'election_date'
+        'number',
     ];
 
     /**
@@ -24,19 +24,13 @@ class Candidate extends Model
     protected $hidden = [];
 
 
-    public function locale()
+    public function state()
     {
-        return $this->morphTo();
+        return $this->belongsTo('App\State');
     }
 
-    public function position()
+    public function locales()
     {
-        return $this->belongsTo('App\Position');
+        return $this->morphMany('App\Candidate', 'locale');
     }
-
-    public function party()
-    {
-        return $this->belongsTo('App\Party');
-    }
-
 }
